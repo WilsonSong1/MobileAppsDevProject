@@ -1,0 +1,43 @@
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar id = "HOME">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button slot="left" (click) ="newsPage()">Back</ion-button>
+      </ion-buttons>
+      <ion-title>Science</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-card *ngFor="let science of science">
+      <img  src={{science.urlToImage}} width="500"/>
+      <ion-card-header>
+        
+        <ion-card-title>{{science.name}}</ion-card-title>
+        <ion-card-title>{{science.title}}</ion-card-title>
+        <ion-card-subtitle>{{science.publishedAt}}</ion-card-subtitle>
+        <ion-card-subtitle>{{science.description}}</ion-card-subtitle>
+        <ion-card-subtitle>{{science.author}}</ion-card-subtitle>
+        <ion-buttons>
+        <ion-grid>
+          <ion-row>
+            <ion-col id = "readMore">
+                <ion-button>
+                  <a href="{{science.url}}">Read More</a>
+                </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-buttons>
+      </ion-card-header>
+     </ion-card>
+  </ion-content>
+</div>

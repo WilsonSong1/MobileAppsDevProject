@@ -1,0 +1,93 @@
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar id = "HOME">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+
+    <ion-buttons>
+      <ion-grid>
+        <ion-row>
+          <ion-col id = "menuButton">
+            <ion-menu-toggle>
+              <ion-button>TOP HEADLINES</ion-button>
+            </ion-menu-toggle>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-buttons>
+
+    <ion-buttons>
+      <ion-grid>
+        <ion-row>
+          <ion-col id = "menuButton">
+            <ion-menu-toggle>
+              <ion-button (click)="sportsPage()">SPORTS</ion-button>
+            </ion-menu-toggle>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-buttons>
+
+    <ion-buttons>
+      <ion-grid>
+        <ion-row>
+          <ion-col id = "menuButton">
+            <ion-menu-toggle>
+              <ion-button (click)="sciencePage()">SCIENCE</ion-button>
+            </ion-menu-toggle>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-buttons>
+
+    <ion-buttons>
+      <ion-grid>
+        <ion-row>
+          <ion-col id = "menuButton">
+            <ion-menu-toggle>
+              <ion-button (click)="signInPage()">SIGN UP</ion-button>
+            </ion-menu-toggle>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-buttons>
+
+
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Top Headlines</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-card *ngFor="let news of news">
+      <img  src={{news.urlToImage}} width="500"/>
+      <ion-card-header>
+        
+        <ion-card-title>{{news.name}}</ion-card-title>
+        <ion-card-title>{{news.title}}</ion-card-title>
+        <ion-card-subtitle>{{news.publishedAt}}</ion-card-subtitle>
+        <ion-card-subtitle>{{news.description}}</ion-card-subtitle>
+        <ion-card-subtitle>{{news.author}}</ion-card-subtitle>
+        <ion-buttons>
+        <ion-grid>
+          <ion-row>
+            <ion-col id = "readMore">
+              <ion-button>
+                <a href="{{news.url}}">Read More</a>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-buttons>
+      </ion-card-header>
+     </ion-card>
+  </ion-content>
+</div>

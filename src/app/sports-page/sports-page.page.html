@@ -1,0 +1,43 @@
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar id = "HOME">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button slot="left" (click) ="newsPage()">Back</ion-button>
+      </ion-buttons>
+      <ion-title>Sports</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-card *ngFor="let sport of sports">
+      <img  src={{sport.urlToImage}} width="500"/>
+      <ion-card-header>
+        
+        <ion-card-title>{{sport.name}}</ion-card-title>
+        <ion-card-title>{{sport.title}}</ion-card-title>
+        <ion-card-subtitle>{{sport.publishedAt}}</ion-card-subtitle>
+        <ion-card-subtitle>{{sport.description}}</ion-card-subtitle>
+        <ion-card-subtitle>{{sport.author}}</ion-card-subtitle>
+        <ion-buttons>
+        <ion-grid>
+          <ion-row>
+            <ion-col id = "readMore">
+                <ion-button>
+                  <a href="{{sport.url}}">Read More</a>
+                </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-buttons>
+      </ion-card-header>
+     </ion-card>
+  </ion-content>
+</div>
